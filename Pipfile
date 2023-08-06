@@ -4,6 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+django = "*"
+django-channels = "*"
+channels = {extras = ["daphne"], version = "*"}
 
 [dev-packages]
 

@@ -1,15 +1,28 @@
 {% extends "message/base.html "%}
 
-
-Home
 {% block content %}
-  <header>
-    <h1>Welcome to My Simple HTML Page</h1>
-  </header>
+  
   <main>
-    <p>This is a basic HTML template.</p>
+    
+    <div class="chat-room-input-container">
+      What chat room would you like to enter?<br>
+      <input id="room-name-input" type="text" size="100"><br>
+      <input id="room-name-submit" type="button" value="Enter">
+    </div>
+
+    <script>
+      document.querySelector('#room-name-input').focus();
+      document.querySelector('#room-name-input').onkeyup = function(e) {
+        if (e.key === 'Enter') {  // enter, return
+          document.querySelector('#room-name-submit').click();
+        }
+      };
+
+      document.querySelector('#room-name-submit').onclick = function(e) {
+        var roomName = document.querySelector('#room-name-input').value;
+        window.location.pathname = '/chat/' + roomName + '/';
+      };
+    </script> 
+
   </main>
-  <footer>
-    <p>&copy; 2023 My Simple HTML Page. All rights reserved.</p>
-  </footer>
 {% endblock content %}

@@ -29,8 +29,10 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+ASGI_APPLICATION = "main.asgi.application"
 
 INSTALLED_APPS = [
+    'daphne',
     'message',
     'django.contrib.admin',
     'django.contrib.auth',
