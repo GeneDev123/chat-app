@@ -1,20 +1,34 @@
 # chat-app
 A Chat application where two user can converse with one another in realtime.
 
+Requirements:
+- Docker Desktop
+- Ngrok
+- Pipfile
+- Pipfile.lock
+
+How to run locally: 
+- Docker Desktop
+- pipenv shell
+- cd main
+- Open Docker and in a cli terminal enter the command "docker run --rm -p 6379:6379 redis:7"
+- create another terminal then enter "python manage.py runserver"
+
+How to deploy with Ngrok:
+- Require Docker Desktop and Ngrok
+- run "docker run --rm -p 6379:6379 redis:7"
+- convert all 'ws' to 'wss' in 'message/routing.py' nad 'template/message/room.html'
+- The Ngrok Url must end with ".ngrok-free.app", otherwise update the ALLOWED_HOST in settings.py
+- Python manage.py runserver
+
+Limitations of Ngrok:
+- Some ISP blocking the application
+- IOS cuurently not workinng
+
+----------------------
 Devlog:
+
 August 08, 2023
 - Used django as the main framework for the application.
 - Created Rooms where the channels can communicate and interact with one another.
-
-How to run locally: 
-- pipenv shell
-- cd main
-- Open Docker and in a cli terminal enter the command: docker run --rm -p 6379:6379 redis:7
-- create another terminal then enter "python manage.py runserver"
-
-How to use with Ngrok:
-- Open Docker
-- run "docker run --rm -p 6379:6379 redis:7"
-- Python manage.py runserver
-- Add the Ngrok url in the allowed_host in settings.py
-- convert ws to wss
+- functional for both Local and Ngrok

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-hfe-c_@uo4vn!!38&!i-i82!e%zjg%+$f8p$7!0)#-@o1m_@fv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ac87-136-158-37-160.ngrok-free.app']
+ALLOWED_HOSTS = ['.ngrok-free.app', "127.0.0.1"]
 
 # Channels
 ASGI_APPLICATION = "main.asgi.application"
