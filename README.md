@@ -9,10 +9,11 @@ Requirements:
 
 How to run locally: 
 - Docker Desktop
-- pipenv shell
-- cd main
 - Open Docker and in a cli terminal enter the command "docker run --rm -p 6379:6379 redis:7"
-- create another terminal then enter "python manage.py runserver"
+- Open another terminal then
+- Enter "pipenv shell"
+- Enter "cd main"
+- Enter "python manage.py runserver"
 
 How to deploy with Ngrok:
 - Require Docker Desktop and Ngrok
