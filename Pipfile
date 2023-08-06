@@ -7,6 +7,8 @@ name = "pypi"
 django = "*"
 django-channels = "*"
 channels = {extras = ["daphne"], version = "*"}
+channels-redis = "*"
+selenium = "*"
 
 [dev-packages]
 

@@ -25,12 +25,20 @@ SECRET_KEY = 'django-insecure-hfe-c_@uo4vn!!38&!i-i82!e%zjg%+$f8p$7!0)#-@o1m_@fv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ac87-136-158-37-160.ngrok-free.app']
 
+# Channels
+ASGI_APPLICATION = "main.asgi.application"
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)],
+        },
+    },
+}
 
 # Application definition
-ASGI_APPLICATION = "main.asgi.application"
-
 INSTALLED_APPS = [
     'daphne',
     'message',
@@ -80,6 +88,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        "TEST": {
+            "NAME": BASE_DIR / "db.sqlite3",
+        },
     }
 }
 
